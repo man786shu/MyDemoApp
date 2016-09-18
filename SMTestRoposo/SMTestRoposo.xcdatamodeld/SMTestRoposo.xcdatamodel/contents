@@ -1,4 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="SMStory" representedClassName="SMStory" syncable="YES">
+        <attribute name="commentsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="db" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="likeFlag" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="likesCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="si" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="storyDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="storyId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="verb" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SMUser" inverseName="stories" inverseEntity="SMUser" syncable="YES"/>
+    </entity>
+    <entity name="SMUser" representedClassName="SMUser" syncable="YES">
+        <attribute name="about" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdOn" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="followers" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="following" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="handle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isFollowing" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="stories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SMStory" inverseName="user" inverseEntity="SMStory" syncable="YES"/>
+    </entity>
+    <fetchRequest name="getAllStories" entity="SMStory"/>
+    <fetchRequest name="getAllStoriesForUserID" entity="SMStory" predicateString="db == $db"/>
+    <fetchRequest name="getAllUsers" entity="SMUser"/>
+    <fetchRequest name="getUserWithUserID" entity="SMUser" predicateString="userID == $userID"/>
+    <elements>
+        <element name="SMUser" positionX="-63" positionY="-18" width="128" height="208"/>
+        <element name="SMStory" positionX="-362" positionY="123" width="128" height="223"/>
+    </elements>
 </model>
