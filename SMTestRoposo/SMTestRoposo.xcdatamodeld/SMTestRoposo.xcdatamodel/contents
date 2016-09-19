@@ -30,9 +30,10 @@
     <fetchRequest name="getAllStories" entity="SMStory"/>
     <fetchRequest name="getAllStoriesForUserID" entity="SMStory" predicateString="db == $db"/>
     <fetchRequest name="getAllUsers" entity="SMUser"/>
+    <fetchRequest name="getStoryWithStoryID" entity="SMStory" predicateString="storyId == $storyId"/>
     <fetchRequest name="getUserWithUserID" entity="SMUser" predicateString="userID == $userID"/>
     <elements>
-        <element name="SMUser" positionX="-63" positionY="-18" width="128" height="208"/>
         <element name="SMStory" positionX="-362" positionY="123" width="128" height="223"/>
+        <element name="SMUser" positionX="-63" positionY="-18" width="128" height="208"/>
     </elements>
 </model>

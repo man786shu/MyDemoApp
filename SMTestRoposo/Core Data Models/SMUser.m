@@ -1,14 +1,15 @@
 //
-//  SMStory.m
-//  SMTestRoposo
+//  SMUser.m
+//  
 //
 //  Created by Shubham Mandal on 18/09/16.
-//  Copyright © 2016 Shubham Mandal. All rights reserved.
+//
 //
 
+#import "SMUser.h"
 #import "SMStory.h"
 
-@implementation SMStory
+@implementation SMUser
 
 // Insert code here to add functionality to your managed object subclass
 
